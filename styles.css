@@ -50,7 +50,8 @@ h1, h2, h3, .nexus-badge {
     text-align: center;
     position: relative;
     /* Usamos una imagen de stock alternativa de alta velocidad del Teide */
-    background-image: url('https://unsplash.com');
+    /* Busca esta línea dentro de .hero y cámbiala por tu archivo local */
+background-image: url('teide.png');
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;
