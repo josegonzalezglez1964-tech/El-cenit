@@ -1,169 +1,131 @@
-/* RESET GENERAL */
+:root {
+    --bg-deep: #050508;
+    --bg-card: #0a0b10;
+    --accent-nexus: #00f2ff;
+    --accent-glow: rgba(0, 242, 255, 0.2);
+    --text-primary: #f0f2f5;
+    --text-secondary: #8f9cae;
+    --border-nexus: #161923;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #000;
-  color: white;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* HERO (PORTADA) */
+h1, h2, h3, .nexus-badge {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.max-w-md { max-width: 600px; }
+
+/* Fondo de Red Cyber */
+.cyber-grid {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(22, 25, 35, 0.3) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(22, 25, 35, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+}
+
+/* Hero Section */
 .hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: radial-gradient(circle at top, #161616, #000000);
-  padding: 0 20px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #0f1322 0%, var(--bg-deep) 70%);
+    padding: 80px 0;
 }
 
-.hero h1 {
-  font-size: 80px;
-  margin: 0 0 10px 0;
-  letter-spacing: -2px;
+.nexus-badge {
+    font-size: 0.8rem;
+    color: var(--accent-nexus);
+    border: 1px solid var(--accent-nexus);
+    padding: 6px 16px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 24px;
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
-.hero p {
-  font-size: 22px;
-  opacity: 0.8;
-  max-width: 600px;
-  margin: 0 auto 20px auto;
+.glow-text {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
 }
 
-/* SECCIONES ESTÁNDAR */
-.seccion {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 80px 20px;
-  box-sizing: border-box;
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 40px;
 }
 
-.oscuro {
-  background: #0a0a0a;
+/* Botones Premium */
+.hero-actions { display: flex; justify-content: center; gap: 16px; }
+.btn-nexus-primary {
+    background: var(--accent-nexus); color: #000;
+    padding: 14px 28px; border-radius: 6px; font-weight: 600; text-decoration: none;
+    transition: all 0.3s; border: none; cursor: pointer; text-transform: uppercase; font-size: 0.9rem;
 }
+.btn-nexus-primary:hover { box-shadow: 0 0 20px var(--accent-nexus); transform: translateY(-2px); }
 
-.final {
-  background: linear-gradient(to bottom, #000000, #111111);
+.btn-nexus-secondary {
+    background: transparent; color: var(--text-primary);
+    padding: 14px 28px; border-radius: 6px; border: 1px solid var(--border-nexus);
+    text-decoration: none; transition: all 0.3s; cursor: pointer; text-transform: uppercase; font-size: 0.9rem;
 }
+.btn-nexus-secondary:hover { border-color: var(--accent-nexus); background: rgba(0,242,255,0.05); }
 
-/* CONTENEDORES DE TEXTO */
-.contenido {
-  max-width: 650px;
-  margin: 0 auto;
+/* Secciones */
+.section-nexus { padding: 100px 0; }
+.dark-bg { background-color: rgba(10, 11, 16, 0.5); border-top: 1px solid var(--border-nexus); border-bottom: 1px solid var(--border-nexus); }
+
+.section-header { margin-bottom: 48px; }
+.section-header span { color: var(--accent-nexus); font-size: 0.85rem; font-family: 'Orbitron'; display: block; margin-bottom: 8px; }
+.section-header h2 { font-size: 2.2rem; }
+
+/* Tesis e Interfaz de Pilares */
+.tesis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.tesis-card { background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-nexus); }
+.tesis-card.highlight { border-color: rgba(0, 242, 255, 0.3); box-shadow: inset 0 0 15px rgba(0,242,255,0.02); }
+.tesis-card h3 { margin-bottom: 16px; color: var(--accent-nexus); }
+.tesis-card p { color: var(--text-secondary); }
+
+.grid-pilares { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.pilar-card { background: var(--bg-card); padding: 40px 32px; border-radius: 8px; border: 1px solid var(--border-nexus); transition: all 0.4s; }
+.pilar-card:hover { transform: translateY(-5px); border-color: var(--accent-nexus); }
+.pilar-icon { font-size: 2rem; margin-bottom: 20px; }
+.pilar-card h3 { margin-bottom: 12px; }
+.pilar-card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+/* Formularios Interactivos */
+.nexus-form-box { background: var(--bg-card); border: 1px solid var(--border-nexus); padding: 40px; border-radius: 12px; }
+label { display: block; font-family: 'Orbitron'; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 10px; text-transform: uppercase; }
+textarea, input[type="date"] {
+    width: 100%; background: #11131c; border: 1px solid var(--border-nexus); color: #fff;
+    padding: 14px; border-radius: 6px; margin-bottom: 24px; font-family: inherit; outline: none; transition: border 0.3s;
 }
+textarea { height: 120px; resize: none; }
+textarea:focus, input[type="date"]:focus { border-color: var(--accent-nexus); }
+.full-width { width: 100%; }
 
-.contenido-ancho {
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 100%;
-}
+/* Consola Log */
+.console-box { background: #000; border-left: 3px solid var(--accent-nexus); padding: 16px; margin-top: 20px; border-radius: 4px; font-family: monospace; }
+.console-text { color: #00ff66; font-size: 0.9rem; }
 
-h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-}
-
-p {
-  font-size: 18px;
-  line-height: 1.6;
-  opacity: 0.7;
-}
-
-.subtitulo {
-  margin-bottom: 50px;
-  font-size: 20px;
-}
-
-/* REJILLA PRO (CSS GRID) */
-.grid-pilares {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.tarjeta {
-  background: #121212;
-  border: 1px solid #222;
-  padding: 35px 25px;
-  text-align: left;
-  border-radius: 8px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.tarjeta:hover {
-  transform: translateY(-5px);
-  border-color: #444;
-}
-
-.tarjeta h3 {
-  font-size: 22px;
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #fff;
-}
-
-.tarjeta p {
-  font-size: 15px;
-  margin: 0;
-}
-
-/* BOTONES */
-button {
-  margin-top: 20px;
-  padding: 14px 32px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background: white;
-  color: black;
-  transform: scale(1.03);
-}
-
-/* ANIMACIONES CON SCROLL */
-.scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
-}
-
-.scroll.activo {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE (MÓVILES Y TABLETS) */
-@media (max-width: 900px) {
-  .grid-pilares {
-    grid-template-columns: 1fr; /* Pasa a ser una sola columna en móviles */
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 50px;
-  }
-
-  h2 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-}
+.nexus-footer { text-align: center; padding: 40px; color: var(--text-dark); border-top: 1px solid var(--border-nexus); font-size: 0.85rem; }
